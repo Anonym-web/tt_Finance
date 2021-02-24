@@ -1,0 +1,14 @@
+package com.anonym.parsedome;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+
+@SpringBootApplication
+public class ParsedomeApplication{
+
+    public static void main(String[] args) {
+        SpringApplication.run(ParsedomeApplication.class, args);
+    }
+}
