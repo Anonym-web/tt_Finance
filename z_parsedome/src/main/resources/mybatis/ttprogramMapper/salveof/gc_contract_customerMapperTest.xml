@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.anonym.parsedome.mapper.ttprogram.salveof.gc_contract_customerMapperTest">
+    <insert id="insertBatch">
+        INSERT INTO
+          gc_contract_customer(`省分`,`本年合同数量`,`本年合同金额`,`本年合同新增订单`,`兑现率_本年合同`,`签认金额_移动`,`实收金额移动`,`记账金额移动`,`移动合同金额`,`移动订单金额`,`兑现率_移动`,`签认金额_移动外`,`实收金额_移动外`,`记账金额_移动外`,`移动外合同金额`,`移动外订单金额`,`兑现率_移动外`,`签认金额_铁路`,`实收金额_铁路`,`记账金额_铁路`,`铁路合同金额`,`铁路订单金额`,`兑现率_铁路`,`签认金额_去年同期`,`实收金额_去年同期`,`记账金额_去年同期`,`去年同期合同金额`,`同比增长率`,`2019年在执行合同金额`,`在执行订单金额`,`兑现率_2019年在执行`,`签认金额_去年移动在执行`,`实收金额_去年移动在执行`,`记账金额_去年移动在执行`,`移动合同金额_去年在执行`,`移动订单金额_去年在执行`,`兑现率_去年移动在执行`,`移动外合同金额_去年在执行`,`移动外订单金额_去年在执行`,`兑现率_去年移动外在执行`,`2019年已执行完合同金额`,`订单金额`,`兑现率_去年已执行`,`甲方签认金额`,`实收金额_去年移动已执行`,`记账金额_去年移动已执行`,`移动合同金额_去年已执行`,`移动订单金额_去年已执行`,`兑现率_去年移动已执行`,`移动外合同金额_去年已执行`,`移动外订单金额_去年已执行`,`兑现率_去年移动外已执行`,`统计时间`)
+        VALUES
+        <foreach collection="array" item="temp" separator= ",">
+            <foreach collection="temp" item="item" open="(" close=")" separator=",">
+                #{item}
+            </foreach>
+        </foreach>
+    </insert>
+</mapper>

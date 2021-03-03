@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.anonym.parsedome.mapper.ttprogram.salveof.gc_contract_reserveMapperTest">
+    <insert id="insertBatch">
+        INSERT INTO
+        gc_contract_reserve(`省分`,`2020全年收入计划`,`计算预警值`,`2017年合同平均兑现率`,`2018年合同平均兑现率`,`2019年已执行完合同兑现率`,`平均兑现率`,`计算预警值1`,`2020年签订合同`,`2019年在执行合同`,`已签订订单金额`,`兑现率`,`19年在执行合同剩余合同额`,`现有合同存量`,`合同储备缺口`,`统计时间`)
+        VALUES
+        <foreach collection="array" item="temp" separator= ",">
+            <foreach collection="temp" item="item" open="(" close=")" separator=",">
+                #{item}
+            </foreach>
+        </foreach>
+    </insert>
+</mapper>

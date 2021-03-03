@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.anonym.parsedome.mapper.ttprogram.salveof.gc_income_summaryMapperTest">
+    <insert id="insertBatch">
+        INSERT INTO
+        gc_income_summary(`省分`,`本月收入`,`工程业务上月累计收入`,`工程业务收入累计`,`主营业务收入总计`,`移动公司工程业务收入`,`铁路工程业务收入`,`主营业务收入占比`,`非移收入占比`,`上年同期工程业务收入累计`,`同比增长率`,`工程业务成本累计`,`主营业务成本总计`,`移动公司工程业务成本`,`铁路工程业务成本`,`工程业务利润累计`,`营业利润总计`,`移动公司工程利润`,`铁路工程利润`,`本月应收账款累计`,`债权占收比`,`来自移动`,`3个月以内_移动`,`3-6个月_移动`,`6个月-1年_移动`,`1-2年_移动`,`2-3年_移动`,`3年以上_移动`,`来自铁路`,`3个月以内_铁路`,`3-6个月_铁路`,`6个月-1年_铁路`,`1-2年_铁路`,`2-3年_铁路`,`3年以上_铁路`,`来自其他单位`,`3个月以内_其他`,`3-6个月_其他`,`6个月-1年_其他`,`1-2年_其他`,`2-3年_其他`,`3年以上_其他`,`本月实收累计`,`本月应付累计`,`业务外包费`,`业务外包费占比`,`上月实收累计`,`本月实收金额`,`直接成本`,`直接成本占收比`,`统计时间`)
+        VALUES
+        <foreach collection="array" item="temp" separator= ",">
+            <foreach collection="temp" item="item" open="(" close=")" separator=",">
+                #{item}
+            </foreach>
+        </foreach>
+    </insert>
+</mapper>

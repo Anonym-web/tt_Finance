@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.anonym.parsedome.mapper.ttprogram.master.gc_bidMapper">
+    <insert id="insertBatch">
+        INSERT INTO
+        gc_bid(`id`,`省分`,`投标数量`,`移动投标数量`,`移动外投标数量`,`其中铁路投标数量`,`总投资金额`,`移动投资金额`,`移动外投资金额`,`铁路投资金额`,`中标数量`,`中标率`,`移动中标数量`,`移动项目中标率`,`移动外中标数量`,`移动外项目中标率`,`其中铁路中标数量`,`铁路项目中标率`,`中标金额`,`中标份额`,`移动中标金额`,`移动中标份额`,`集客`,`家客`,`室分和WLAN`,`设备安装`,`线路管道`,`其他`,`移动外中标金额`,`移动外中标份额`,`铁路`,`电信`,`联通`,`铁塔`,`广电`,`铁通`,`其它`,`统计时间`)
+        VALUES
+        <foreach collection="array" item="temp" separator= ",">
+            <foreach collection="temp" item="item" open="(" close=")" separator=",">
+                #{item}
+            </foreach>
+        </foreach>
+    </insert>
+</mapper>

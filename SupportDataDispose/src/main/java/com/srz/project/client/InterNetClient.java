@@ -49,14 +49,14 @@ public class InterNetClient {
 
         //-----------------------------------------------------------------------------------------------------------------------
 
-        CopyOnWriteArrayList<String> sheet0ArrayList = InterNetData.networkManagementParse("G:\\铁通工作\\自己接到的\\网络管理服务定期数据\\2021-01\\2021年1月网络管理技术服务定期数据V2.xlsx",0,11,2);
-        for (String s : sheet0ArrayList) {
-            System.out.println(s);
-        }
+//        CopyOnWriteArrayList<String> sheet0ArrayList = InterNetData.networkManagementParse("G:\\铁通工作\\自己接到的\\网络管理服务定期数据\\2021-01\\2021年1月网络管理技术服务定期数据V2.xlsx",0,11,2);
+//        for (String s : sheet0ArrayList) {
+//            System.out.println(s);
+//        }
 //        // 连接数据库net_bazaar_business   v2的 KTT1001网络管理技术服务收支利情况表-分业务分市场
-        Connection rawDataListConnection = OperationMySQL.connectMySQL(MysqlAttribute_net_bazaar_business.url.getAttribute(), MysqlAttribute_net_bazaar_business.user.getAttribute(), MysqlAttribute_net_bazaar_business.password.getAttribute());
+//        Connection rawDataListConnection = OperationMySQL.connectMySQL(MysqlAttribute_net_bazaar_business.url.getAttribute(), MysqlAttribute_net_bazaar_business.user.getAttribute(), MysqlAttribute_net_bazaar_business.password.getAttribute());
 //        // 插入数据 net_bazaar_business
-        OperationMySQL.insertMySQL(rawDataListConnection, MysqlAttribute_net_bazaar_business.tableName.getAttribute(), MysqlAttribute_net_bazaar_business.fields.getAttribute(), sheet0ArrayList);
+//        OperationMySQL.insertMySQL(rawDataListConnection, MysqlAttribute_net_bazaar_business.tableName.getAttribute(), MysqlAttribute_net_bazaar_business.fields.getAttribute(), sheet0ArrayList);
 
 
 

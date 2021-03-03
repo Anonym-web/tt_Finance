@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.anonym.parsedome.mapper.ttprogram.master.engineering_businessMapper">
+    <insert id="insertBatch">
+        INSERT INTO
+        `工程业务情况表`(`id`,`month`,`省分`,`收入`,`排名`,`累计收入`,`排名1`,`同比增长`,`排名2`,`全年收入计划`,`排名3`,`全年收入完成率`,`排名4`,`移动工程业务收入`,`非移收入`,`铁路工程业务收入`,`非移收入占比`,`排名5`,`累计成本`,`累计成本占收比`,`排名6`,`利润率`,`排名7`,`直接成本占收比`,`排名7/1`,`业务外包费`,`外包费占收比`,`排名8`,`应收账款`,`排名9`,`应收账款/年度收入`,`排名10`,`应付账款`,`排名11`,`当月回款金额`,`累计回款金额`,`排名12`)
+        VALUES
+        <foreach collection="array" item="temp" separator= ",">
+            <foreach collection="temp" item="item" open="(" close=")" separator=",">
+                #{item}
+            </foreach>
+        </foreach>
+    </insert>
+</mapper>

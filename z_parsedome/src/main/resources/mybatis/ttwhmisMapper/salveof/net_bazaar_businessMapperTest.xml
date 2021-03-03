@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.anonym.parsedome.mapper.ttwhmis.salveof.net_bazaar_businessMapperTest">
+    <insert id="insertBatch">
+        INSERT INTO
+        net_bazaar_business(`科目编号`,`业务_科目`,`中国移动`,`中国电信`,`中国联通`,`中国铁路总公司`,`中国铁塔`,`地铁公司`,`其他市场`,`待分摊`,`合计`,`统计时间`)
+        VALUES
+        <foreach collection="array" item="temp" separator= ",">
+            <foreach collection="temp" item="item" open="(" close=")" separator=",">
+                #{item}
+            </foreach>
+        </foreach>
+    </insert>
+</mapper>

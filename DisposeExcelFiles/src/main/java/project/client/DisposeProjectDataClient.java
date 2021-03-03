@@ -17,7 +17,7 @@ public class DisposeProjectDataClient {
     public static void main(String[] args) {
         // excel路径
         //统计每个公司的实际花费的费用，包括取暖费，交通费
-        String excelPath = "G:\\铁通工作\\自己接到的\\12月工程业务";
+        String excelPath = "G:\\铁通工作\\自己接到的\\工程业务\\2020-12\\12月工程业务";
         List<String> fileList = new ArrayList<>();
         GetFilePath.getFilePath(new File(excelPath), fileList);
         String time = "2020-12";

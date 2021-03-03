@@ -8,7 +8,6 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
@@ -25,20 +24,20 @@ import javax.sql.DataSource;
  * @since JDK 1.8
  */
 @Configuration
-@MapperScan(basePackages = "com.anonym.parsedome.mapper.ttwhmis.master", sqlSessionTemplateRef  = "ttwhmisSqlSessionTemplate")
-public class TTwhmisConfig {
+@MapperScan(basePackages = "com.anonym.parsedome.mapper.ttprogram.salveof", sqlSessionTemplateRef  = "ttprogramtestSqlSessionTemplate")
+public class TTprogramTestConfig {
 
-    @Value("${spring.datasource.ttwhmis.jdbc-url}")
+    @Value("${spring.datasource.ttprogramtest.jdbc-url}")
     private String dbUrl;
-    @Value("${spring.datasource.ttwhmis.username}")
+    @Value("${spring.datasource.ttprogramtest.username}")
     private String userName;
-    @Value("${spring.datasource.ttwhmis.password}")
+    @Value("${spring.datasource.ttprogramtest.password}")
     private String passWord;
-    @Value("${spring.datasource.ttwhmis.type}")
+    @Value("${spring.datasource.ttprogramtest.type}")
     private String type;
 
-    @Bean(name = "ttwhmisDataSource")
-    @ConfigurationProperties(prefix = "spring.datasource.ttwhmis")
+    @Bean(name = "ttprogramtestDataSource")
+    @ConfigurationProperties(prefix = "spring.datasource.ttprogramtest")
     public DataSource testDataSource() {
         DruidDataSource dataSource=new DruidDataSource();
         try {
@@ -51,19 +50,19 @@ public class TTwhmisConfig {
         }
         return dataSource;
     }
-    @Bean(name = "ttwhmisSqlSessionFactory")
-    public SqlSessionFactory testSqlSessionFactory(@Qualifier("ttwhmisDataSource") DataSource dataSource) throws Exception {
+    @Bean(name = "ttprogramtestSqlSessionFactory")
+    public SqlSessionFactory testSqlSessionFactory(@Qualifier("ttprogramtestDataSource") DataSource dataSource) throws Exception {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
-        bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mybatis/ttwhmisMapper/master/*.xml"));
+        bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mybatis/ttprogramMapper/salveof/*.xml"));
         return bean.getObject();
     }
-    @Bean(name = "ttwhmisTransactionManager")
-    public DataSourceTransactionManager testTransactionManager(@Qualifier("ttwhmisDataSource") DataSource dataSource) {
+    @Bean(name = "ttprogramtestTransactionManager")
+    public DataSourceTransactionManager testTransactionManager(@Qualifier("ttprogramtestDataSource") DataSource dataSource) {
         return new DataSourceTransactionManager(dataSource);
     }
-    @Bean(name = "ttwhmisSqlSessionTemplate")
-    public SqlSessionTemplate testSqlSessionTemplate(@Qualifier("ttwhmisSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
+    @Bean(name = "ttprogramtestSqlSessionTemplate")
+    public SqlSessionTemplate testSqlSessionTemplate(@Qualifier("ttprogramtestSqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {
         return new SqlSessionTemplate(sqlSessionFactory);
     }
 }

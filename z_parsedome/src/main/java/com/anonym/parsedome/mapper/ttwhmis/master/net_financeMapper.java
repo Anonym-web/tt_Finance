@@ -1,4 +1,4 @@
-package com.anonym.parsedome.mapper.ttwhmis;
+package com.anonym.parsedome.mapper.ttwhmis.master;
 
 import org.apache.ibatis.annotations.Mapper;
 

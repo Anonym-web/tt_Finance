@@ -18,7 +18,7 @@ public class GetFilePath {
             assert files != null;
             for (File f : files) {
                 // 去除正在打开的文件（注意：文件名中不要包含`~$`）
-                if (f.isFile() && !f.toString().contains("~$")) {
+                if (f.isFile() && !f.toString().contains("~$") && !f.toString().contains(".tgz") && !f.toString().contains(".zip")) {
                     fileList.add(f.toString());
                 } else {
                     getFilePath(f, fileList);
