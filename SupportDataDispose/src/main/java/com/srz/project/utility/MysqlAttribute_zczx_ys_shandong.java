@@ -7,7 +7,7 @@ package com.srz.project.utility;
 public enum MysqlAttribute_zczx_ys_shandong {
     url("jdbc:mysql://10.0.43.68:3306/省份数据"),
     user("root"),
-    password("zytop@123"),
+    password("Gdferh_Dwer2@rYdqs"),
     tableName("zczx_ys_shandong"),
     fields("主体帐簿名称,科目名称,部门档案名称,成本费用类型,成本投入市场类型,客户类型,方向1,期初余额,本期借方,本期贷方,借方累计,贷方累计,方向,期末余额,所属省份,所属类型,统计时间,成本类型明细");
 

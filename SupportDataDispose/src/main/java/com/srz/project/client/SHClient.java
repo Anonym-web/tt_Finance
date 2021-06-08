@@ -14,29 +14,29 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class SHClient {
     public static void main(String[] args) {
         // 处理原数据
-        CopyOnWriteArrayList<String> rawDataList = ReadSHSupportCenterData.readSHSupportCenterData("G:\\铁通工作\\交接的项目\\省份文件\\上海数据\\十一月", 0, 0);
+        CopyOnWriteArrayList<String> rawDataList = ReadSHSupportCenterData.readSHSupportCenterData("G:\\铁通工作\\自己接到的\\省份数据\\上海\\2021.02", 0, 0);
 
         for (String s : rawDataList) {
             System.out.println(s
             );
         }
-//        // 连接数据库
-        //Connection rawDataListConnection = OperationMySQL.connectMySQL(MysqlAttribute_zczx_ys_shandong.url.getAttribute(), MysqlAttribute_zczx_ys_shandong.user.getAttribute(), MysqlAttribute_zczx_ys_shandong.password.getAttribute());
-//        // 插入数据
-        //OperationMySQL.insertMySQL(rawDataListConnection, MysqlAttribute_zczx_ys_shandong.tableName.getAttribute(), MysqlAttribute_zczx_ys_shandong.fields.getAttribute(), rawDataList);
+//         连接数据库
+        Connection rawDataListConnection = OperationMySQL.connectMySQL(MysqlAttribute_zczx_ys_shandong.url.getAttribute(), MysqlAttribute_zczx_ys_shandong.user.getAttribute(), MysqlAttribute_zczx_ys_shandong.password.getAttribute());
+        // 插入数据
+        OperationMySQL.insertMySQL(rawDataListConnection, MysqlAttribute_zczx_ys_shandong.tableName.getAttribute(), MysqlAttribute_zczx_ys_shandong.fields.getAttribute(), rawDataList);
 
-        // 处理处理后的原数据
-        //CopyOnWriteArrayList<String> disposeList = DisposeSHSupportCenterData.disposeSHSupportCenterData(rawDataList);
-//        // 连接数据库
-        //Connection disposeListConnection = OperationMySQL.connectMySQL(MysqlAttribute_zczx_shandong.url.getAttribute(), MysqlAttribute_zczx_shandong.user.getAttribute(), MysqlAttribute_zczx_shandong.password.getAttribute());
-//        // 插入数据
-        //OperationMySQL.insertMySQL(disposeListConnection, MysqlAttribute_zczx_shandong.tableName.getAttribute(), MysqlAttribute_zczx_shandong.fields.getAttribute(), disposeList);
+//         处理处理后的原数据
+        CopyOnWriteArrayList<String> disposeList = DisposeSHSupportCenterData.disposeSHSupportCenterData(rawDataList);
+        // 连接数据库
+        Connection disposeListConnection = OperationMySQL.connectMySQL(MysqlAttribute_zczx_shandong.url.getAttribute(), MysqlAttribute_zczx_shandong.user.getAttribute(), MysqlAttribute_zczx_shandong.password.getAttribute());
+        // 插入数据
+        OperationMySQL.insertMySQL(disposeListConnection, MysqlAttribute_zczx_shandong.tableName.getAttribute(), MysqlAttribute_zczx_shandong.fields.getAttribute(), disposeList);
 
         // 处理花名册的数据
-        //CopyOnWriteArrayList<String> disposeRosterData = ReadSHRosterData.readSHRosterData("G:\\铁通工作\\交接的项目\\省份文件\\上海数据\\花名册\\人员信息模版（上海）.xlsx", 0, 7, "2020-11");
+        CopyOnWriteArrayList<String> disposeRosterData = ReadSHRosterData.readSHRosterData("C:\\Users\\Administrator\\Desktop\\人员信息模版（上海）.xlsx", 0, 7, "2021-02");
         // 连接数据库
-        //Connection disposeRosterDataConnection = OperationMySQL.connectMySQL(MysqlAttribute_renyuan_shandong.url.getAttribute(), MysqlAttribute_renyuan_shandong.user.getAttribute(), MysqlAttribute_renyuan_shandong.password.getAttribute());
-//        // 插入数据
-        //OperationMySQL.insertMySQL(disposeRosterDataConnection, MysqlAttribute_renyuan_shandong.tableName.getAttribute(), MysqlAttribute_renyuan_shandong.fields.getAttribute(), disposeRosterData);
+        Connection disposeRosterDataConnection = OperationMySQL.connectMySQL(MysqlAttribute_renyuan_shandong.url.getAttribute(), MysqlAttribute_renyuan_shandong.user.getAttribute(), MysqlAttribute_renyuan_shandong.password.getAttribute());
+        // 插入数据
+        OperationMySQL.insertMySQL(disposeRosterDataConnection, MysqlAttribute_renyuan_shandong.tableName.getAttribute(), MysqlAttribute_renyuan_shandong.fields.getAttribute(), disposeRosterData);
     }
 }

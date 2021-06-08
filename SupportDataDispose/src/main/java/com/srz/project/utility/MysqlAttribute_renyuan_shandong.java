@@ -7,7 +7,7 @@ package com.srz.project.utility;
 public enum MysqlAttribute_renyuan_shandong {
     url("jdbc:mysql://10.0.43.68:3306/省份数据"),
     user("root"),
-    password("zytop@123"),
+    password("Gdferh_Dwer2@rYdqs"),
     tableName("renyuan_shandong"),
     fields("所属省份,所属地市,部门档案名称,人员属性,人员数量,统计时间");
 

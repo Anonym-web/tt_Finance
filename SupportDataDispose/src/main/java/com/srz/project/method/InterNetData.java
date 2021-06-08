@@ -39,6 +39,7 @@ public class InterNetData {
                 }
                 /*统计时间*/
                 String staticsTime = time.split("年",-1)[0].concat("-").concat(month);
+//                String staticsTime = "2020-03";
                 /*读取文件*/
                 list = (CopyOnWriteArrayList<StringBuilder>) ExcelUtil.excelUtil(inputPath,sheetIndex,lastCellNum);
                 for (StringBuilder line : list) {

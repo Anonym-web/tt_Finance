@@ -22,6 +22,8 @@ public class SHCompanyList {
         companyList.add("松江|奉金松分公司");
         companyList.add("崇明|浦东分公司");
         companyList.add("市场拓展|本级");
+        companyList.add("销售业务部|本级");
+        companyList.add("政企铁路业务中心/信息产品中心|本级");
         companyList.add("重大项目部|重大项目部");
     }
 }

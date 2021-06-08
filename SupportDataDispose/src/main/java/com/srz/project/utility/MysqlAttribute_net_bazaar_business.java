@@ -7,7 +7,7 @@ package com.srz.project.utility;
 public enum MysqlAttribute_net_bazaar_business {
     url("jdbc:mysql://10.0.43.68:3306/TT_WHMIS"),
     user("root"),
-    password("zytop@123"),
+    password("Gdferh_Dwer2@rYdqs"),
     tableName("net_bazaar_business"),
     fields("科目编号,业务_科目,中国移动,中国电信,中国联通,中国铁路总公司,中国铁塔,地铁公司,其他市场,待分摊,合计,统计时间");
 
